@@ -1,9 +1,8 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import useStore from "@/features/counter/store";
-import Link from "next/link";
 
-export default function Home() {
+export default function Blog() {
   const { count1, count2, send1, send2 } = useStore(
     ({ counter, counter2 }) => ({
       count1: counter.state.context.count,
@@ -25,7 +24,6 @@ export default function Home() {
         <h1>
           Hello {count1} {count2}
         </h1>
-        <Link href="/blog">Blog</Link>
         <button onClick={() => send1("INCREMENT")}>Increment 1</button>
         <button onClick={() => send1("DECREMENT")}>Decrement 1</button>
         <button onClick={() => send2("INCREMENT")}>Increment 2</button>
